@@ -1,0 +1,14 @@
+<table border="1">
+<tr><th>User</th><th>Reason</th><th>Status</th><th>Action</th></tr>
+{% for l in leaves %}
+<tr>
+<td>{{l.user}}</td>
+<td>{{l.reason}}</td>
+<td>{{l.status}}</td>
+<td>
+<a href="/update/{{l.id}}/Approved/">Approve</a> |
+<a href="/update/{{l.id}}/Rejected/">Reject</a>
+</td>
+</tr>
+{% endfor %}
+</table>

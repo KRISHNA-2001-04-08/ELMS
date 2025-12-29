@@ -1,0 +1,7 @@
+<form method="post">
+    {% csrf_token %}
+Reason:<textarea name="reason"></textarea><br>
+From:<input type="date" name="from_date"><br>
+To:<input type="date" name="to_date"><br>
+<button type="submit">Apply</button>
+</form>
