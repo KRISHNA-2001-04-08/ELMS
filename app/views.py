@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Leave
 from django.contrib.auth import authenticate, login,logout
@@ -74,5 +74,12 @@ def update_status(request, id, status):
 def logout_view(request):
     logout(request)
     return redirect('/')
+
+@login_required
+@user_passes_test(lambda u: not u.is_superuser)
+def delete(request,id):
+    remove=get_object_or_404(Leave, id=id)
+    remove.delete()
+    return redirect('my_leaves')
 
 

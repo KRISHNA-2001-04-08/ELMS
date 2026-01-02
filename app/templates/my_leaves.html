@@ -1,7 +1,15 @@
 <table border="1">
-<tr><th>Reason</th><th>Status</th></tr>
+<tr>
+    <th>Reason</th>
+    <th>Status</th>
+    <th>Remove</th>
+</tr>
 {% for l in leaves %}
-<tr><td>{{l.reason}}</td><td>{{l.status}}</td></tr>
+<tr>
+    <td>{{l.reason}}</td>
+    <td>{{l.status}}</td>
+    <td><a href="{% url 'delete' l.id %}">Delete</a></td>
+</tr>
 {% endfor %}
 </table>
 <a href="/logout/">Logout</a>

@@ -8,5 +8,6 @@ urlpatterns = [
     path('my/', views.my_leaves, name='my_leaves'),
     path('manage/', views.manage_leaves, name='manage_leaves'),
     path('update/<int:id>/<str:status>/', views.update_status, name='update_status'),
+    path('delete/<int:id>/',views.delete,name='delete'),
     path('logout/',views.logout_view,name="logout")
 ]
